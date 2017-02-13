@@ -1,6 +1,7 @@
 module Types exposing (..)
 
 import RemoteData exposing (RemoteData)
+import Keyboard
 
 
 type alias Coords =
@@ -33,12 +34,14 @@ type GameMsg
     = SetName String
     | SetColor String
     | Move Coords
+    | SetScore String
 
 
 type Msg
     = GameMsg GameMsg
     | Receive (RemoteData String Board)
     | KeepAlive
+    | KeyPress Keyboard.KeyCode
 
 
 type alias Model =
